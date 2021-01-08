@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-primary"><a routerLink="/home">To Home</a></button>
+
+<hr>
+
+<form [formGroup]="test_form" (ngSubmit)="onSubmit()">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="name">
+    </label>
+
+    <button type="submit" [disabled]="!test_form.valid">Submit</button>
+  
+</form>
+
+<div>
+    <label>Form Master</label>
+    <p>{{test_form.value.name}}</p>
+
+
+    <label>Form A</label>
+    <p>{{text_a}}</p>
+
+    <label>Form B</label>
+    <p>{{text_b}}</p>
+</div>
+
+<hr>
+
+<app-form-a [data]="test_form" [text_form_b]="text_b" (out_data)="get_from_a($event)"></app-form-a>
+<app-form-b [data]="test_form" [text_form_a]="text_a" (out_data)="get_from_b($event)"></app-form-b>

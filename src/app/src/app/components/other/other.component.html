@@ -1,0 +1,18 @@
+<button type="button" class="btn btn-primary"><a routerLink="/home">To Home</a></button>
+
+<hr>
+
+<button type="button" (click)="getFinal()">Get final from service</button>
+<button type="button" (click)="get_from_ls()">Get data from Local Storage</button>
+
+<div *ngIf="data_final.length > 0">
+    <h3> Final From JSON (Service)</h3>
+    <!-- <button type="button" class="btn btn-primary" (click)="getFinal()">Get Final</button> -->
+    <p>{{data_final}}</p>
+</div>
+
+<div *ngIf="data_from.length > 0">
+    <h3> OnInit Final From LS (Local Storage)</h3>
+    <p>{{data_from}}</p>
+</div>
+

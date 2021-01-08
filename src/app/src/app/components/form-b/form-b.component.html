@@ -1,0 +1,21 @@
+<p>form-b works!</p>
+
+<div *ngIf="data !== undefined">
+    <p>{{data.value.name}}</p>
+</div>
+
+<div>
+  <label>Form text A</label>
+  <p>{{text_form_a}}</p>
+</div>
+
+<form [formGroup]="form_b" (ngSubmit)="onSubmit()">
+  
+    <label>
+      value form a:
+      <input type="text" formControlName="text">
+    </label>
+
+    <button type="submit" [disabled]="!form_b.valid">Submit</button>
+  
+</form>

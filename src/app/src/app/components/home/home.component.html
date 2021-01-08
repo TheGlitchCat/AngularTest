@@ -1,0 +1,36 @@
+
+<button type="button" class="btn btn-primary"><a routerLink="/other">To other</a></button>
+<button type="button" class="btn btn-primary"><a routerLink="/forms">To forms</a></button>
+
+
+<app-a [data]="data_a" (out_data)="getDataA($event)"></app-a>
+<app-b [data]="data_b" (out_data)="getDataA($event)"></app-b>
+<app-c [data]="data_c" (out_data)="getDataA($event)"></app-c>
+
+<hr>
+
+<app-final [data]="data_from" (trigger)="getFinal()"></app-final>
+
+<hr>
+
+<label>Action</label>
+<p>{{text}}</p>
+
+<hr>
+
+<div>
+  <button type="button" class="btn btn-primary" (click)="sendToA()">{{bt_a}} to A</button>
+  <button type="button" class="btn btn-secondary" (click)="sendToB()">{{bt_b}} to B</button>
+  <button type="button" class="btn btn-ternary" (click)="sendToC()">{{bt_c}} to C</button>
+</div>
+
+<hr>
+
+<div *ngIf="data_final.length > 0">
+  <h3> Final From JSON (Service)</h3>
+  <!-- <button type="button" class="btn btn-primary" (click)="getFinal()">Get Final</button> -->
+  <p>{{data_final}}</p>
+
+  <button type="button" (click)="send_to_ls()">Save to local storage</button>
+</div>
+
